@@ -1,10 +1,10 @@
-GotPass v0.94b > v0.64b
-release 8/3/22
+GotPass v1.00 > v0.94b
+8/5/22
 
-adds a cryptography key on first-time startup
-better commands
-prevents user from editing and viewing a document that isnt there
-added view doc functionality
-faster times
+removed error text boxes
+added user functionality
+added auto home
+added "home" to every menu
+added del function
 bug fixes
-373 lines
+397 lines
