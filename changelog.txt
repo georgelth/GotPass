@@ -1,10 +1,8 @@
-GotPass v1.01 > v1.00
+GotPass v1.0.2 > v1.0.1
 8/6/22
 
-userinfo.txt stores passwords in full data encryption instead of sha264 hashing
-view function tells you if you dont have data stored in txt file
-edit function blocks out password when writing to file
-added framework for admin panel with no functionality
-added an icon for .exe application
+info is even more secure with 5 character ends customized to your password. it is now almost impossible to access your information without the right password
+cleaned up the view function
+new loading title
 bug fixes
-444 lines
+459 lines
