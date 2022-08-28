@@ -1,8 +1,6 @@
-GotPass v1.0.3 > v1.0.2
-8/26/22
+GotPass v1.0.4 > v1.0.3
+8/28/22
 
-more user friendly
-commands accepts lowercase
-faster load times
+add password confirmation when editing document
 bug fixes
-459 lines
+478 lines
