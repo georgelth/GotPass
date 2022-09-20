@@ -270,7 +270,7 @@ def viewDoc(username):
         print("==============\n")
         print("[srch!a] - SEARCH BY ACCOUNT NAME")
         print("[srch!u] - SEARCH BY USERNAME")
-        print("[srch!p] - SEARCH BY PASSWORD")
+        print("[srch!p] - SEARCH BY PASSWORD\n")
         print("[home] - EXIT\n")
         print("LINE# | INFO\n")
         aup = {0: "ACNT", 1: "USER", 2: "PASS"}
@@ -303,20 +303,18 @@ def searcha(username):
     bigTitle()
     print("SEARCH BY ACCOUNT")
     print("=================\n")
+    alist = []
     with open(f"{username}%{fileDigitEncoder(username)}.txt", "rb") as file:
         lines = file.readlines()
     count = 0
     for line in lines:
-        if count != 0:
-            print("==========")
         sline = line.split(b' ')
         count += 1
         for i in range(3):
             newString = sline[i]
             decrypt = f.decrypt(newString)
             decode = decrypt.decode('utf-8')
-            alist = []
-            alist += [decode]
+            alist.append(decode)
     userInput = input(">>")
     pattern = re.compile(userInput)
     matches = pattern.finditer(alist[0])
