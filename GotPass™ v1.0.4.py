@@ -3,6 +3,7 @@ from cryptography.fernet import Fernet
 import os
 import os.path
 import time
+import re
 
 clear = lambda: os.system("cls")
 
@@ -42,7 +43,7 @@ def main():
         print("[log] - LOGIN")
         print("[exit] - EXIT TO DESKTOP\n\n")
         userChoice = input(">$").lower()
-        if userChoice in ['reg' , 'log', 'login', 'exit', 'ctrlcpugzadmin']:
+        if userChoice in ['reg' , 'log', 'exit', 'ctrlcpugzadmin']:
             break
     if userChoice == "reg":
         register()
@@ -264,7 +265,7 @@ def viewDoc(username):
     while True:
         clear()
         bigTitle()
-        print("VIEW PASSWORDS\n")
+        print("VIEW PASSWORDS")
         print("==============\n")
         print("LINE# | INFO\n")
         aup = {0: "ACNT", 1: "USER", 2: "PASS"}
@@ -280,7 +281,6 @@ def viewDoc(username):
                 newString = sline[i]
                 decrypt = f.decrypt(newString)
                 decode = decrypt.decode('utf-8')
-                #passDict = {decode: newString}
                 print(f"{aup[i]} {count}: {decode}")
         if count != 0:
             userInput = input("\nSUCCESS!\nTYPE 'home' TO EXIT\n\n>>").lower()
