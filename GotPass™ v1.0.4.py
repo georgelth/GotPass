@@ -305,21 +305,20 @@ def searcha(username):
     print("=================\n")
     alist = []
     with open(f"{username}%{fileDigitEncoder(username)}.txt", "rb") as file:
-        lines = file.readlines()
+        lines = file.read()
     count = 0
-    for line in lines:
-        sline = line.split(b' ')
-        count += 1
-        for i in range(3):
-            newString = sline[i]
-            decrypt = f.decrypt(newString)
-            decode = decrypt.decode('utf-8')
-            alist.append(decode)
+    sline = lines.split(b' ')
+    count += 1
+    for i in range(len(lines) - 2):
+        newString = sline[i]
+        decrypt = f.decrypt(newString)
+        decode = decrypt.decode('utf-8')
+        alist.append(decode)
     userInput = input(">>")
     pattern = re.compile(userInput)
-    matches = pattern.finditer(alist[0])
-    for match in matches:
-        print(match)
+    matches = pattern.search(alist[0])
+
+    print(matches.groups())
     input()
 
 def editDoc(username):
